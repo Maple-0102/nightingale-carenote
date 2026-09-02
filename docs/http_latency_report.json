@@ -1,0 +1,14 @@
+{
+  "benchmark": "authenticated_care_note_http_read",
+  "measured_at": "2026-08-28",
+  "environment": "candidate Mac, local Docker container",
+  "base_url": "http://127.0.0.1:8000",
+  "warmups": 20,
+  "measured_reads": 300,
+  "median_ms": 3.575,
+  "p95_ms": 4.721,
+  "max_ms": 5.836,
+  "target_p95_ms": 300,
+  "target_met": true,
+  "scope": "HTTP, signed-session verification, RBAC, SQLite queries, consistency/review assembly, and JSON serialization; excludes browser rendering and production network"
+}

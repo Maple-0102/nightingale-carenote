@@ -1,0 +1,13 @@
+{
+  "benchmark": "warm_care_note_service_read",
+  "measured_at": "2026-08-28",
+  "environment": "candidate Mac, local SQLite",
+  "warmups": 20,
+  "measured_reads": 300,
+  "median_ms": 6.249,
+  "p95_ms": 6.622,
+  "max_ms": 19.194,
+  "target_p95_ms": 300,
+  "target_met": true,
+  "scope": "CareNoteService.get_care_note plus SQLite queries, consistency/review assembly, and JSON-ready serialization; excludes browser and network"
+}
