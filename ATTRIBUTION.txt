@@ -1,0 +1,35 @@
+Nightingale Care Note — External Attribution
+============================================================
+
+Runtime code
+------------
+Python 3 standard library — Python Software Foundation License Version 2.
+https://docs.python.org/3/license.html
+
+SQLite — Public domain.
+https://www.sqlite.org/copyright.html
+
+Container base
+--------------
+Docker Official Image: python:3.12-alpine.
+The image aggregates Python (PSF License) and Alpine Linux packages under their
+respective package licenses. The image itself is not copied into this repository.
+https://hub.docker.com/_/python
+https://www.alpinelinux.org/
+
+Models and APIs
+---------------
+No external model or hosted API is called by the submitted prototype. The AI
+scribe demonstration uses a deterministic local summarizer after the PHI
+redaction gateway. The gateway is intentionally adapter-ready for an approved
+LLM in a governed deployment.
+
+Frontend assets
+---------------
+No external JavaScript/CSS libraries, icon packs, fonts, stock images, or other
+media are bundled. The interface and CSS marks were authored for this build.
+
+Development tools (not redistributed)
+--------------------------------------
+Docker Desktop / Docker Compose — Docker terms apply.
+ChatGPT / Codex — used as a permitted coding assistant under the candidate brief.

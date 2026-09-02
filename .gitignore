@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.db
+*.db-shm
+*.db-wal
+.DS_Store
+.env
+certs/
+dist/*
+!dist/*.docx
+!dist/*.pdf
+.coverage
+.pytest_cache/

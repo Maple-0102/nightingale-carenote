@@ -1,0 +1,26 @@
+services:
+  carenote:
+    build: .
+    ports:
+      - "127.0.0.1:8443:8443"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8443
+      CARENOTE_DB: /app/data/carenote.db
+      TLS_CERT: /run/tls/cert.pem
+      TLS_KEY: /run/tls/key.pem
+      DEMO_MODE: ${DEMO_MODE:-1}
+      CARENOTE_SESSION_SECRET: ${CARENOTE_SESSION_SECRET:-local-demo-secret-change-me}
+    volumes:
+      - carenote-data:/app/data
+      - ./certs:/run/tls:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  carenote-data:

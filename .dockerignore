@@ -1,0 +1,8 @@
+.git
+*.db
+*.db-shm
+*.db-wal
+certs
+dist
+__pycache__
+.DS_Store
