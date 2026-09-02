@@ -401,7 +401,7 @@ def add_first_page(doc, num_id):
     set_run_font(run, size=13.5, color=GRAY)
 
     for label, value in (
-        ("Prepared by", "WANG QIUFENG • candidate submission"),
+        ("Built by", "Qiufeng Wang"),
         ("Prototype", "Synthetic data only • Python + SQLite + browser-native UI"),
         ("Performance", "Authenticated Docker HTTP P95 4.721 ms (target ≤300 ms)"),
     ):
@@ -601,8 +601,8 @@ def build():
     add_third_page(doc, num_id)
     audit_document(doc)
     doc.core_properties.title = "Nightingale Care Note - Technical Brief"
-    doc.core_properties.subject = "Nightingale 72HR Build candidate submission"
-    doc.core_properties.author = "WANG QIUFENG"
+    doc.core_properties.subject = "Portfolio technical brief"
+    doc.core_properties.author = "Qiufeng Wang"
     doc.core_properties.keywords = "Nightingale, care note, provenance, RBAC, clinical collaboration"
     doc.save(OUTPUT)
     print(OUTPUT)
