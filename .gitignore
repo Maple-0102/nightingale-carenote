@@ -7,7 +7,6 @@ __pycache__/
 .env
 certs/
 dist/*
-!dist/*.docx
 !dist/*.pdf
 .coverage
 .pytest_cache/

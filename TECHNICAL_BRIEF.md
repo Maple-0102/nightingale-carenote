@@ -1,6 +1,6 @@
 # Nightingale Care Note — Technical Brief
 
-Prepared by **WANG QIUFENG** for the Nightingale 72HR Build.
+Built by **Qiufeng Wang**.
 
 ## Product thesis
 

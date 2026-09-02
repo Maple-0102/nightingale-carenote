@@ -1,11 +1,11 @@
 # Nightingale Care Note
 
-Submission by **WANG QIUFENG**.
+Built by **Qiufeng Wang**.
 
 A working, synthetic-data prototype for a single longitudinal patient note: a 10-second clinical glance, role-owned timeline sections, deterministic consistency checks, bounded human review, source-linked pre-visit briefing, evidence-witnessed AI decisions, patient teach-back, access transparency, a tamper-evident audit chain, safe local attack probes, visible PHI redaction, append-only verification, interaction-learned prioritization, and a retention-policy lens.
 
 - **Demo:** [Watch the 4:58 product walkthrough](https://youtu.be/F5CkUsmyrEs)
-- **Technical brief:** [PDF](dist/Nightingale_Care_Note_Technical_Brief.pdf) · [Editable DOCX](dist/Nightingale_Care_Note_Technical_Brief.docx)
+- **Technical brief:** [Read online](TECHNICAL_BRIEF.md) · [PDF](dist/Nightingale_Care_Note_Technical_Brief.pdf)
 
 > Candidate build, not a medical device. It uses synthetic data only and does not claim production HIPAA/PDPA compliance.
 
