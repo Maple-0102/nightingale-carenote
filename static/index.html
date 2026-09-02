@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A trusted longitudinal care note for clinicians, staff, and patients." />
+    <title>Nightingale Care Note</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">N</span>
+        <span>Nightingale Care Note</span>
+      </div>
+      <nav aria-label="Workspace">
+        <button class="nav-item active">Care note</button>
+        <button class="nav-item">Patients</button>
+        <button class="nav-item">Audit</button>
+      </nav>
+      <div class="role-switch" aria-label="Demo role">
+        <span>Viewing as</span>
+        <button id="role-button" aria-haspopup="listbox">Clinician <span aria-hidden="true">⌄</span></button>
+        <div id="role-menu" class="role-menu" role="listbox" hidden>
+          <button role="option" data-actor="clinician-lim">Clinician <small>Dr Adrian Lim</small></button>
+          <button role="option" data-actor="staff-jia">Staff <small>Jia Chen</small></button>
+          <button role="option" data-actor="patient-maya-user">Patient <small>Maya Tan</small></button>
+          <button role="option" data-actor="admin-acacia">Admin <small>Nora Admin</small></button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="patient-header" aria-labelledby="patient-name">
+        <div>
+          <p class="eyebrow">LONGITUDINAL CARE NOTE</p>
+          <h1 id="patient-name">Maya Tan <span class="patient-id">NTG-2048</span></h1>
+          <p class="patient-meta">42 years · she/her · Acacia Family Clinic</p>
+        </div>
+        <div class="trust-state">
+          <span class="status-dot"></span>
+          <div><strong id="review-state-title">Loading review status</strong><small id="review-state-detail">Checking clinician-authored entries…</small></div>
+        </div>
+      </section>
+
+      <section class="glance" aria-labelledby="glance-title">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">10-SECOND VIEW</p>
+            <h2 id="glance-title">What matters now</h2>
+          </div>
+          <div class="glance-actions">
+            <button class="quiet-button patient-only" id="access-report-button">Who viewed my record?</button>
+            <button class="quiet-button internal-only" id="brief-button">Pre-visit brief</button>
+            <button class="quiet-button internal-only" id="review-button">Review queue <span id="review-count">0</span></button>
+            <button class="quiet-button internal-only" id="security-button">Security sandbox</button>
+            <button class="quiet-button internal-only" id="time-machine-button">Time machine</button>
+            <button class="quiet-button" id="why-button">Why these items?</button>
+          </div>
+        </div>
+        <div class="glance-grid" id="glance-grid">
+          <article class="signal signal-critical">
+            <div class="signal-top"><span class="signal-label">SAFETY</span><span class="confidence">Confirmed</span></div>
+            <h3>Penicillin allergy</h3>
+            <p>Urticarial reaction documented by clinician.</p>
+            <button class="source-link" data-source="entry-allergy">View source · 15 Apr 2025</button>
+          </article>
+          <article class="signal signal-attention">
+            <div class="signal-top"><span class="signal-label">TODAY</span><span class="confidence">AI suggestion</span></div>
+            <h3>Persistent nocturnal cough</h3>
+            <p>Worsening over 3 weeks; patient reports interrupted sleep.</p>
+            <button class="source-link" data-source="entry-ai-session">View source · Today 08:36</button>
+          </article>
+          <article class="signal signal-action">
+            <div class="signal-top"><span class="signal-label">OPEN ACTION</span><span class="confidence">Assigned</span></div>
+            <h3>Review spirometry result</h3>
+            <p>Due today · assigned to Dr Lim.</p>
+            <button class="source-link" data-source="entry-staff">View task · Today 09:04</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="timeline-panel">
+          <div class="section-title timeline-heading">
+            <div><p class="eyebrow">SOURCE OF TRUTH</p><h2>Longitudinal timeline</h2></div>
+            <div class="timeline-tools"><button class="quiet-button" id="audit-button">Audit trail</button><button class="quiet-button" id="scribe-button">AI scribe</button><button class="primary-button" id="add-note-button">+ Add note</button></div>
+          </div>
+          <div id="timeline-stream">
+          <div class="date-separator"><span>Today · 25 Aug 2026</span></div>
+          <article class="timeline-entry ai-entry" id="entry-ai-session">
+            <div class="entry-rail"><span class="entry-icon">AI</span><span class="rail-line"></span></div>
+            <div class="entry-content">
+              <div class="entry-meta"><strong>AI patient session summary</strong><span>08:36</span><span class="provenance">session_8821</span></div>
+              <p>Patient reports a dry cough that is worse at night, now affecting sleep. No fever. She asks whether the new inhaler could be contributing.</p>
+              <div class="entity-row"><span>Chief complaint · cough</span><span>Duration · 3 weeks</span><span>Risk · review today</span></div>
+              <div class="entry-actions"><button>Accept highlight</button><button>Reject</button><button>Comment</button></div>
+            </div>
+          </article>
+
+          <article class="timeline-entry" id="entry-staff">
+            <div class="entry-rail"><span class="entry-icon staff-icon">ST</span><span class="rail-line"></span></div>
+            <div class="entry-content">
+              <div class="entry-meta"><strong>Jia · Clinical staff</strong><span>09:04</span><span class="version">v2</span></div>
+              <p>Spirometry report received from respiratory lab. Assigned to <strong>@DrLim</strong> for review before today's consult.</p>
+              <div class="comment"><span>1</span><p><strong>Dr Lim</strong> I’ll review this with Maya during the visit.</p></div>
+              <div class="entry-actions"><button>Reply</button><button>View history</button></div>
+            </div>
+          </article>
+
+          <div class="date-separator"><span>15 Apr 2025</span></div>
+          <article class="timeline-entry clinician-entry" id="entry-allergy">
+            <div class="entry-rail"><span class="entry-icon clinician-icon">DR</span></div>
+            <div class="entry-content">
+              <div class="entry-meta"><strong>Dr Lim · Clinician</strong><span>14:22</span><span class="confidence verified">Verified</span></div>
+              <p>Confirmed penicillin allergy: widespread urticaria after amoxicillin in 2019. No airway involvement.</p>
+              <div class="entry-actions"><button>View history</button><button>Copy source link</button></div>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <aside class="context-panel" aria-label="Patient context">
+          <div class="context-card">
+            <p class="eyebrow">OPEN WORK</p>
+            <h3>2 actions</h3>
+            <div id="task-list">
+              <label><input type="checkbox" /> Review spirometry result</label>
+              <label><input type="checkbox" /> Confirm inhaler technique</label>
+            </div>
+          </div>
+          <div class="context-card">
+            <p class="eyebrow">TRUST LEGEND</p>
+            <ul class="legend-list">
+              <li><span class="legend-dot clinician-dot"></span>Clinician-authored</li>
+              <li><span class="legend-dot staff-dot"></span>Staff-authored</li>
+              <li><span class="legend-dot ai-dot"></span>AI-generated</li>
+            </ul>
+            <p class="legend-note">AI content is never silently merged with clinician-authored facts.</p>
+          </div>
+          <div class="context-card" id="storage-card">
+            <p class="eyebrow">DATA LIFECYCLE</p>
+            <h3>Storage lens</h3>
+            <p class="legend-note">See why each entry stays hot, moves warm, or becomes cold while safety facts remain protected.</p>
+            <button class="quiet-button context-action" id="storage-button">View retention tiers</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <button type="button" id="return-context-button" class="return-context" data-action="return-context" hidden>← Back to conflict review</button>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <dialog id="workspace-dialog">
+      <form method="dialog" class="dialog-shell">
+        <header><div><p class="eyebrow" id="dialog-eyebrow">CARE NOTE</p><h2 id="dialog-title">Panel</h2></div><button class="dialog-close" value="cancel" aria-label="Close">×</button></header>
+        <div id="dialog-content"></div>
+      </form>
+    </dialog>
+    <script src="/app.js"></script>
+  </body>
+</html>
